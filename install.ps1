@@ -1,14 +1,14 @@
 # Installs qrisp as a local Typst package on Windows, so it can be imported as
 # `@local/qrisp:<version>`.
 #
-#   irm https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/robertjndw/qrisp/main/install.ps1 | iex
 #
 # Set $env:QRISP_REF (branch or tag, default main) or $env:QRISP_NAMESPACE (default
 # local) beforehand to change what gets installed. See install.sh for macOS and Linux.
 
 $ErrorActionPreference = "Stop"
 
-$Repo = "robertjndw/typst-qr-code-generator"
+$Repo = "robertjndw/qrisp"
 $Ref = if ($env:QRISP_REF) { $env:QRISP_REF } else { "main" }
 $Namespace = if ($env:QRISP_NAMESPACE) { $env:QRISP_NAMESPACE } else { "local" }
 

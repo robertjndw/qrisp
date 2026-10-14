@@ -1,6 +1,6 @@
 #import "common.typ": gallery, qr-code
 
-#let url = "https://github.com/robertjndw/typst-qr-code-generator"
+#let url = "https://github.com/robertjndw/qrisp"
 #let logo = image("logo.svg")
 
 #gallery(

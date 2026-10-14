@@ -2,7 +2,7 @@
 # Installs qrisp as a local Typst package, so it can be imported as
 # `@local/qrisp:<version>` without going through Typst Universe.
 #
-#   curl -fsSL https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/robertjndw/qrisp/main/install.sh | sh
 #   curl -fsSL .../install.sh | sh -s -- --ref v0.1.0
 #   ./install.sh                  # from a clone: installs your working tree
 #
@@ -15,7 +15,7 @@
 
 set -eu
 
-REPO="robertjndw/typst-qr-code-generator"
+REPO="robertjndw/qrisp"
 REF="${QRISP_REF:-main}"
 NAMESPACE="${QRISP_NAMESPACE:-local}"
 SOURCE=""

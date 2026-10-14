@@ -2,7 +2,7 @@
 
 QR codes for [Typst](https://typst.app) with square, rounded or dotted modules, an optional logo in the middle, and your own colors.
 
-![Showcase](https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/docs/showcase.png)
+![Showcase](https://raw.githubusercontent.com/robertjndw/qrisp/main/docs/showcase.png)
 
 ```typ
 #import "@local/qrisp:0.1.0": qr-code
@@ -21,13 +21,13 @@ qrisp isn't on Typst Universe yet. Until then you can install it as a local pack
 macOS and Linux:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/robertjndw/qrisp/main/install.sh | sh
 ```
 
 Windows (PowerShell):
 
 ```powershell
-irm https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/robertjndw/qrisp/main/install.ps1 | iex
 ```
 
 Then import it from the `local` namespace:
@@ -59,7 +59,7 @@ The three big corner squares (finder patterns) follow the module style unless yo
 )
 ```
 
-![Styles](https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/docs/styles.png)
+![Styles](https://raw.githubusercontent.com/robertjndw/qrisp/main/docs/styles.png)
 
 ### Colors
 
@@ -71,7 +71,7 @@ The three big corner squares (finder patterns) follow the module style unless yo
 #qr-code("https://typst.app", background: none)
 ```
 
-![Colors](https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/docs/colors.png)
+![Colors](https://raw.githubusercontent.com/robertjndw/qrisp/main/docs/colors.png)
 
 Keep the foreground darker than the background. A lot of scanners can't read light-on-dark codes.
 
@@ -85,13 +85,13 @@ Pass the logo as content. A package can't read files from your project, so `logo
 
 Any content works: images, text, shapes, or a logo you build in Typst. qrisp measures it and keeps its proportions. Content sized relative to its container, like `rect(width: 100%, height: 50%)`, is measured inside a square, so that one comes out 2:1. The modules under the logo (plus `logo-padding`, 1 module by default) are left empty.
 
-![Generic content as logos](https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/docs/generic-content.png)
+![Generic content as logos](https://raw.githubusercontent.com/robertjndw/qrisp/main/docs/generic-content.png)
 
 These are all plain Typst content, see [`examples/generic-content.typ`](examples/generic-content.typ).
 
 The cleared area has the same aspect ratio as the logo, so a 16:9 logo gets a 16:9 hole instead of a square with empty bands above and below. Transparent parts of the logo show the code's background. The whole bounding box is still cleared, though, so crop away transparent margins around a logo before using it.
 
-![Wide logo](https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/docs/wide-logo.png)
+![Wide logo](https://raw.githubusercontent.com/robertjndw/qrisp/main/docs/wide-logo.png)
 
 The logo in this picture is drawn in Typst, see [`examples/wide-logo.typ`](examples/wide-logo.typ).
 
@@ -101,7 +101,7 @@ By default the logo gets as big as the code allows while still scanning reliably
 #qr-code("https://typst.app", logo: image("logo.svg"), logo-size: 20%)
 ```
 
-![Logo sizes](https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/docs/logo-size.png)
+![Logo sizes](https://raw.githubusercontent.com/robertjndw/qrisp/main/docs/logo-size.png)
 
 A fixed size that's too big gives you an error saying how much it covers. Make it smaller, or set `logo-check: false` if you've tested the code with a scanner yourself. Less padding leaves more room for the logo, and so does a larger `version`.
 
@@ -141,7 +141,7 @@ For example, dots coloured by column. The inset is the quiet zone, which you hav
 }))
 ```
 
-![Custom drawing](https://raw.githubusercontent.com/robertjndw/typst-qr-code-generator/main/docs/custom.png)
+![Custom drawing](https://raw.githubusercontent.com/robertjndw/qrisp/main/docs/custom.png)
 
 ## Reference
 
