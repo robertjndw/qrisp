@@ -1,0 +1,13 @@
+[package]
+name = "qrisp"
+version = "0.1.0"
+entrypoint = "src/lib.typ"
+authors = ["Robert Jandow <@robertjndw>"]
+license = "MIT"
+description = "QR codes with rounded or dotted modules, logos and custom colors."
+repository = "https://github.com/robertjndw/typst-qr-code-generator"
+keywords = ["qr", "qr-code", "qrcode", "barcode", "logo"]
+categories = ["visualization", "components"]
+disciplines = []
+compiler = "0.13.0"
+exclude = ["plugin", "tests", "examples", "docs", "Makefile", ".github", "install.sh", "install.ps1", "*.pdf"]

@@ -1,0 +1,36 @@
+[package]
+name = "qrisp-plugin"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+
+[lib]
+# rlib lets the native unit and end-to-end tests link against the core logic.
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+qrcodegen = "1.8.0"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-minimal-protocol = "0.2.1"
+
+[dev-dependencies]
+image = { version = "0.25", default-features = false, features = ["png"] }
+serde_json = "1"
+rxing = { version = "0.9.3", default-features = false, features = ["qrcode", "decoders", "encoding_rs"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+# Optimized like release so rxing decodes fast, but without the single-unit LTO link
+# that only the wasm build benefits from.
+[profile.test-opt]
+inherits = "release"
+lto = false
+codegen-units = 16
+incremental = true
